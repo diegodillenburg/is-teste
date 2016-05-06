@@ -5,6 +5,9 @@ RSpec.describe Course, type: :model do
 
   subject { course }
 
+  it { is_expected.to have_many(:classrooms) }
+  it { is_expected.to have_many(:students).through(:classrooms) }
+
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:description) }
   it { is_expected.to respond_to(:status) }
