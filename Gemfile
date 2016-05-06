@@ -56,5 +56,9 @@ group :development do
   gem 'guard-rspec', require: false
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
 gem 'rails_12factor', group: :production
 
