@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title IsTeste
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  head
+  body
+    .container
+      .row
+        .col-md-12
+          h1.text-center Sysduca
+
+      .row
+        .col-md-12
+          ul.nav.nav-tabs
+            li.active role="presentation"
+              = link_to("Students", students_path)
+            li role="presentation"
+              a href="#" Courses
+            li role="presentation"
+              a href="#" Classrooms
+      = yield
+
+  body
+html

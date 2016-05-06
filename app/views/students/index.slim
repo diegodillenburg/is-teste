@@ -1,0 +1,11 @@
+.row
+  .col-md-12
+    h1.text-center Students Index
+    = link_to("+", new_student_path, class: 'pull-right')
+
+- @students.each do |student|
+  = student.name
+  br
+  = student.register_number
+  br
+  = student.status_humanize

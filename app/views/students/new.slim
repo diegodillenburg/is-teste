@@ -1,0 +1,10 @@
+h1 New Student
+= form_for @student do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :register_number
+  = f.text_field :register_number
+  = f.label :status
+  = f.text_field :status
+
+  = f.submit
