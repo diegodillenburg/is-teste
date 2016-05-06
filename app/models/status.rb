@@ -1,6 +1,6 @@
 class Status < EnumerateIt::Base
   associate_values(
-    inactive: [0, 'Inactive'],
-    active:   [1, 'Active']
+    active:   [0, 'Active'],
+    inactive: [1, 'Inactive']
   )
 end

@@ -8,15 +8,15 @@ RSpec.describe Student do
   end
 
   context 'enumerations' do
-    context 'inactive' do
+    context 'active' do
       it 'translates to 0 value' do
-        expect(Status::INACTIVE).to eq(0)
+        expect(Status::ACTIVE).to eq(0)
       end
     end
 
-    context 'active' do
+    context 'inactive' do
       it 'translates to 1 value' do
-        expect(Status::ACTIVE).to eq(1)
+        expect(Status::INACTIVE).to eq(1)
       end
     end
   end
