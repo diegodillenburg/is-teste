@@ -3,9 +3,18 @@
     h1.text-center Students Index
     = link_to("+", new_student_path, class: 'pull-right')
 
-- @students.each do |student|
-  = student.name
-  br
-  = student.register_number
-  br
-  = student.status_humanize
+- @students.each_slice(4) do |group|
+  .row
+  - group.each do |student|
+    .col-md-3
+      .student-card
+        p Name: #{student.name}
+        p Register Number: #{student.register_number}
+        p Status: #{student.status_humanize}
+        = link_to(student_path(student), class: 'marginr-5') do
+          span.glyphicon.glyphicon-eye-open
+        = link_to(edit_student_path(student), class: 'marginr-5') do
+          span.glyphicon.glyphicon-pencil
+        = link_to(student_path(student), method: :delete,
+                    data: { confirm: "Sure? " }) do
+          span.glyphicon.glyphicon-trash

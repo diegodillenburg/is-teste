@@ -11,11 +11,12 @@ html
       .row
         .col-md-12
           h1.text-center Sysduca
+          = params[:controller]
 
       .row
         .col-md-12
           ul.nav.nav-tabs
-            li.active role="presentation"
+            li role="presentation"
               = link_to("Students", students_path)
             li role="presentation"
               a href="#" Courses
