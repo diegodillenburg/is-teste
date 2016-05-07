@@ -6,11 +6,6 @@ class CoursesController < ApplicationController
     respond_with @course
   end
 
-  def show
-    @course = Course.find_by(id: params[:id])
-    respond_with @course
-  end
-
   def new
     @course = Course.new
     respond_with @course
@@ -19,7 +14,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.create(course_params)
 
-    respond_with @course, location: @course
+    respond_with @course, location: courses_path
   end
 
   def edit
@@ -30,7 +25,7 @@ class CoursesController < ApplicationController
   def update
     @course = Course.find_by(id: params[:id])
     @course.update_attributes(course_params)
-    respond_with @course, location: @course
+    respond_with @course, location: courses_path
   end
 
   def destroy

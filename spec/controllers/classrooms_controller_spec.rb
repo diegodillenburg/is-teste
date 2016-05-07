@@ -22,25 +22,6 @@ RSpec.describe ClassroomsController, type: :controller do
     end
   end
 
-  context '#show' do
-    before(:each) do
-      classroom.save
-      get :show, id: classroom.id
-    end
-
-    it 'assigns classroom' do
-      expect(assigns(:classroom)).to eq(classroom)
-    end
-
-    context 'rendering' do
-      render_views
-
-      it 'renders the view' do
-        expect(response).to render_template(:show)
-      end
-    end
-  end
-
   context '#new' do
     before(:each) { get :new }
 
@@ -68,7 +49,7 @@ RSpec.describe ClassroomsController, type: :controller do
       it 'redirects to classrooms#index' do
         post :create, classroom: valid_attrs
 
-        expect(response).to redirect_to classroom_path(Classroom.last)
+        expect(response).to redirect_to classrooms_path
       end
     end
 
@@ -123,7 +104,7 @@ RSpec.describe ClassroomsController, type: :controller do
         put :update, id: classroom.id, classroom: attributes_for(:classroom,
                                         student_id: 2)
 
-        expect(response).to redirect_to classroom_path(classroom)
+        expect(response).to redirect_to classrooms_path
       end
     end
 

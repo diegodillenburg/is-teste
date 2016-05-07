@@ -6,11 +6,6 @@ class ClassroomsController < ApplicationController
     respond_with @classroom
   end
 
-  def show
-    @classroom = Classroom.find_by(id: params[:id])
-    respond_with @classroom
-  end
-
   def new
     @classroom = Classroom.new
     respond_with @classroom
@@ -19,7 +14,7 @@ class ClassroomsController < ApplicationController
   def create
     @classroom = Classroom.create(classroom_params)
 
-    respond_with @classroom, location: @classroom
+    respond_with @classroom, location: classrooms_path
   end
 
   def edit
@@ -30,7 +25,7 @@ class ClassroomsController < ApplicationController
   def update
     @classroom = Classroom.find_by(id: params[:id])
     @classroom.update_attributes(classroom_params)
-    respond_with @classroom, location: @classroom
+    respond_with @classroom, location: classrooms_path
   end
 
   def destroy

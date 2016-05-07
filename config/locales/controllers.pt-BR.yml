@@ -1,0 +1,14 @@
+pt-BR:
+  controllers:
+    students:
+      index: Alunos
+      new: Novo Aluno
+      edit: Editar Aluno
+    courses:
+      index: Cursos
+      new: Novo Curso
+      edit: Editar Curso
+    classrooms:
+      index: Aulas
+      new: Nova Aula
+      edit: Editar Aula

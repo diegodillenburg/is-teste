@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    attributes:
+      student:
+        title: Aluno
+        name: Nome
+        register_number: Número de matrícula
+        status: Status
+      course:
+        title: Curso
+        name: Nome
+        description: Descrição
+        status: Status
+      classroom:
+        title: Aula
+        student: Aluno
+        course: Curso
+        entryat: Matriculado em
+

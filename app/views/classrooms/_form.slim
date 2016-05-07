@@ -3,11 +3,13 @@
     p
       = f.label :student
       br
-      = collection_select(:classroom, :student_id, Student.all, :id, :name)
+      = collection_select(:classroom, :student_id, Student.active, :id, :name,
+          class: 'form-control')
     p
       = f.label :course
       br
-      = collection_select(:classroom, :course_id, Course.all, :id, :name)
+      = collection_select(:classroom, :course_id, Course.active, :id, :name,
+          class: 'form-control')
 
     p
-      = f.submit
+      = f.submit class: 'btn btn-large btn-info'

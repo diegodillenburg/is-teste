@@ -22,25 +22,6 @@ RSpec.describe StudentsController, type: :controller do
     end
   end
 
-  context '#show' do
-    before(:each) do
-      student.save
-      get :show, id: student.id
-    end
-
-    it 'assigns student' do
-      expect(assigns(:student)).to eq(student)
-    end
-
-    context 'rendering' do
-      render_views
-
-      it 'renders the view' do
-        expect(response).to render_template(:show)
-      end
-    end
-  end
-
   context '#new' do
     before(:each) { get :new }
 
@@ -68,7 +49,7 @@ RSpec.describe StudentsController, type: :controller do
       it 'redirects to students#index' do
         post :create, student: valid_attrs
 
-        expect(response).to redirect_to student_path(Student.last)
+        expect(response).to redirect_to students_path
       end
     end
 
@@ -123,7 +104,7 @@ RSpec.describe StudentsController, type: :controller do
         put :update, id: student.id, student: attributes_for(:student,
                                         name: "Teste")
 
-        expect(response).to redirect_to student_path(student)
+        expect(response).to redirect_to students_path
       end
     end
 

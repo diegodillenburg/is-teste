@@ -20,4 +20,13 @@ RSpec.describe Course, type: :model do
   it { is_expected.to validate_length_of(:description).is_at_most(45) }
 
   it { is_expected.to validate_numericality_of(:status).is_less_than_or_equal_to(1) }
+
+  context 'active students scope' do
+    let(:active_course) { create(:course, status: 0) }
+    let!(:inactive_course) { create(:course, status: 1) }
+
+    it 'returns active courses only' do
+      expect(Course.active).to match_array(active_course)
+    end
+  end
 end

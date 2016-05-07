@@ -1,13 +1,11 @@
 module ApplicationHelper
-  def flash_message
+  def flash_messages
     messages = ""
-    [:success, :failure].each do |type|
-      if flash[type]
-        messages += "<p class=\"#{type}\">#{flash[type]}</p>"
-      end
-
-      messages
+    flash.each do |key, value|
+        messages += "<div class=\"alert alert-#{key}\">#{value}</div>"
     end
+
+    messages
   end
 
   def active_link(param)

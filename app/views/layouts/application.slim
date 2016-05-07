@@ -10,17 +10,18 @@ html
     .container
       .row
         .col-md-12
-          h1.text-center Sysduca
+          h1.text-center IsTeste
+          = flash_messages.html_safe
 
       .row
         .col-md-12
           ul
             li.btn.btn-large.btn-info
-              = link_to("Students", students_path)
+              = link_to(t('controllers.students.index'), students_path)
             li.btn.btn-large.btn-info
-              = link_to("Courses", courses_path)
+              = link_to(t('controllers.courses.index'), courses_path)
             li.btn.btn-large.btn-info
-              = link_to("Classrooms", classrooms_path)
+              = link_to(t('controllers.classrooms.index'), classrooms_path)
       = yield
 
   body

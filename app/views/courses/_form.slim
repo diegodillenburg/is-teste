@@ -3,15 +3,16 @@
     p
       = f.label :name
       br
-      = f.text_field :name
+      = f.text_field :name, class: 'form-control'
     p
       = f.label :description
       br
-      = f.text_field :description
+      = f.text_field :description, class: 'form-control'
     p
-      = f.label :status
-      br
-      = f.text_field :status
+      = f.radio_button :status, 0, checked: true
+      = f.label :status, value: t('enumerations.status.active'), class: 'marginr-5'
+      = f.radio_button :status, 1
+      = f.label :status, value: t('enumerations.status.inactive')
 
     p
-      = f.submit
+      = f.submit class: 'btn btn-large btn-info'

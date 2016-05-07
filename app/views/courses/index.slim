@@ -1,18 +1,16 @@
 .row
   .col-md-12
-    h1.text-center Courses Index
-    = link_to("+", new_course_path, class: 'pull-right')
+    h1.text-center #{t('controllers.courses.index')}
+    = link_to(t('controllers.courses.new'), new_course_path, class: 'btn btn-large btn-info pull-right')
 
 - @courses.each_slice(4) do |group|
   .row
   - group.each do |course|
     .col-md-3
       .card
-        p Name: #{course.name}
-        p Register Number: #{course.description}
-        p Status: #{course.status_humanize}
-        = link_to(course_path(course), class: 'marginr-5') do
-          span.glyphicon.glyphicon-eye-open
+        p #{t('activerecord.attributes.course.name')}: #{course.name}
+        p #{t('activerecord.attributes.course.description')}: #{course.description}
+        p #{t('activerecord.attributes.course.status')}: #{course.status_humanize}
         = link_to(edit_course_path(course), class: 'marginr-5') do
           span.glyphicon.glyphicon-pencil
         = link_to(course_path(course), method: :delete,

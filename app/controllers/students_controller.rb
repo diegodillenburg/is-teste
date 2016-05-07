@@ -6,11 +6,6 @@ class StudentsController < ApplicationController
     respond_with @student
   end
 
-  def show
-    @student = Student.find_by(id: params[:id])
-    respond_with @student
-  end
-
   def new
     @student = Student.new
     respond_with @student
@@ -19,7 +14,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.create(student_params)
 
-    respond_with @student, location: @student
+    respond_with @student, location: students_path
   end
 
   def edit
@@ -30,7 +25,7 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find_by(id: params[:id])
     @student.update_attributes(student_params)
-    respond_with @student, location: @student
+    respond_with @student, location: students_path
   end
 
   def destroy

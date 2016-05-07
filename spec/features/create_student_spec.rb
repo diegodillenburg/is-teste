@@ -8,6 +8,6 @@ describe 'create student', type: :feature do
     fill_in "Register number", with: "123456789"
     fill_in "Status", with: 0
 
-    click_on "Create Student"
+    click_on "Criar Student"
   end
 end

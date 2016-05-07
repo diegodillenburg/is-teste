@@ -22,25 +22,6 @@ RSpec.describe CoursesController, type: :controller do
     end
   end
 
-  context '#show' do
-    before(:each) do
-      course.save
-      get :show, id: course.id
-    end
-
-    it 'assigns course' do
-      expect(assigns(:course)).to eq(course)
-    end
-
-    context 'rendering' do
-      render_views
-
-      it 'renders the view' do
-        expect(response).to render_template(:show)
-      end
-    end
-  end
-
   context '#new' do
     before(:each) { get :new }
 
@@ -68,7 +49,7 @@ RSpec.describe CoursesController, type: :controller do
       it 'redirects to courses#index' do
         post :create, course: valid_attrs
 
-        expect(response).to redirect_to course_path(Course.last)
+        expect(response).to redirect_to courses_path
       end
     end
 
@@ -123,7 +104,7 @@ RSpec.describe CoursesController, type: :controller do
         put :update, id: course.id, course: attributes_for(:course,
                                         name: "Teste")
 
-        expect(response).to redirect_to course_path(course)
+        expect(response).to redirect_to courses_path
       end
     end
 

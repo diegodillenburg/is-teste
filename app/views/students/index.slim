@@ -1,20 +1,18 @@
 .row
   .col-md-12
-    h1.text-center Students Index
-    = link_to("+", new_student_path, class: 'pull-right')
+    h1.text-center #{t('controllers.students.index')}
+    = link_to(t('controllers.students.new'), new_student_path, class: 'btn btn-large btn-info pull-right')
 
 - @students.each_slice(4) do |group|
   .row
   - group.each do |student|
     .col-md-3
       .card
-        p Name: #{student.name}
-        p Register Number: #{student.register_number}
-        p Status: #{student.status_humanize}
-        = link_to(student_path(student), class: 'marginr-5') do
-          span.glyphicon.glyphicon-eye-open
+        p #{t('activerecord.attributes.student.name')}: #{student.name}
+        p #{t('activerecord.attributes.student.register_number')}: #{student.register_number}
+        p #{t('activerecord.attributes.student.status')}: #{student.status_humanize}
         = link_to(edit_student_path(student), class: 'marginr-5') do
           span.glyphicon.glyphicon-pencil
         = link_to(student_path(student), method: :delete,
-                    data: { confirm: "Sure? " }) do
+                    data: { confirm: "Remover? " }) do
           span.glyphicon.glyphicon-trash

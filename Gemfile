@@ -15,7 +15,6 @@ gem 'capybara'
 gem 'factory_girl_rails'
 gem 'enumerate_it'
 gem 'responders'
-gem 'client_side_validations'
 
 group :development, :test do
   gem 'byebug'
