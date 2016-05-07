@@ -4,5 +4,4 @@ class Classroom < ActiveRecord::Base
 
   validates :student_id, presence: true
   validates :course_id, presence: true
-  validates :entry_at, presence: true
 end

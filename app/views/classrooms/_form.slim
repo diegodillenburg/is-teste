@@ -1,0 +1,13 @@
+= form_for @classroom do |f|
+  .form-group
+    p
+      = f.label :student
+      br
+      = collection_select(:classroom, :student_id, Student.all, :id, :name)
+    p
+      = f.label :course
+      br
+      = collection_select(:classroom, :course_id, Course.all, :id, :name)
+
+    p
+      = f.submit

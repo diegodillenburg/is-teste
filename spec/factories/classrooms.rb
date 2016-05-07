@@ -2,6 +2,9 @@ FactoryGirl.define do
   factory :classroom do
     student_id 1
     course_id 1
-    entry_at "2016-05-06 16:25:03"
+
+    factory :invalid_classroom do
+      student_id nil
+    end
   end
 end

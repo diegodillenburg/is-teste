@@ -1,0 +1,20 @@
+.row
+  .col-md-12
+    h1.text-center Classrooms Index
+    = link_to("+", new_classroom_path, class: 'pull-right')
+
+- @classrooms.each_slice(4) do |group|
+  .row
+  - group.each do |classroom|
+    .col-md-3
+      .card
+        p Student: #{classroom.student.name}
+        p Course: #{classroom.course.name}
+        p Entry At: #{classroom.created_at.strftime("%H:%M %d/%m/%y")}
+        = link_to(classroom_path(classroom), class: 'marginr-5') do
+          span.glyphicon.glyphicon-eye-open
+        = link_to(edit_classroom_path(classroom), class: 'marginr-5') do
+          span.glyphicon.glyphicon-pencil
+        = link_to(classroom_path(classroom), method: :delete,
+                    data: { confirm: "Sure? " }) do
+          span.glyphicon.glyphicon-trash
