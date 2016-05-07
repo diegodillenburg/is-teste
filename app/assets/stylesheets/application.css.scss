@@ -20,7 +20,16 @@
   margin-right: 5px;
 }
 
-.student-card {
+.card {
   margin-bottom: 10px;
   border-bottom: 1px solid black;
+}
+
+li.btn.btn-large.btn-info a {
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+  }
 }

@@ -11,6 +11,6 @@ module ApplicationHelper
   end
 
   def active_link(param)
-    "class='active'" if params[:controller] == param
+    "active" if params[:controller] == param
   end
 end

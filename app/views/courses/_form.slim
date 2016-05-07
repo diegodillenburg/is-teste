@@ -1,0 +1,17 @@
+= form_for @course do |f|
+  .form-group
+    p
+      = f.label :name
+      br
+      = f.text_field :name
+    p
+      = f.label :description
+      br
+      = f.text_field :description
+    p
+      = f.label :status
+      br
+      = f.text_field :status
+
+    p
+      = f.submit

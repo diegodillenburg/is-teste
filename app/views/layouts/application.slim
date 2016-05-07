@@ -11,16 +11,15 @@ html
       .row
         .col-md-12
           h1.text-center Sysduca
-          = params[:controller]
 
       .row
         .col-md-12
-          ul.nav.nav-tabs
-            li role="presentation"
+          ul
+            li.btn.btn-large.btn-info
               = link_to("Students", students_path)
-            li role="presentation"
-              a href="#" Courses
-            li role="presentation"
+            li.btn.btn-large.btn-info
+              = link_to("Courses", courses_path)
+            li.btn.btn-large.btn-info
               a href="#" Classrooms
       = yield
 
